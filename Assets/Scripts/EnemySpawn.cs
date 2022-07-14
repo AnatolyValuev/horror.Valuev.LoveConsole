@@ -2,26 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawn : MonoBehaviour
+namespace Quest.Enemies
 {
-
-    [SerializeField] private GameObject enemyPrefab;
-    [SerializeField] private float spawnStep = 1f;
-    [SerializeField]private const float LifeTime = .5f;
-
-    [SerializeField]private float nextSpawnTime;
-
-
-
-    void Update()
+    public class EnemySpawn : MonoBehaviour
     {
 
-        if (Time.time > nextSpawnTime)
+        [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private float spawnStep = 1f;
+        [SerializeField] private const float LifeTime = .5f;
+         
+        [SerializeField] private float nextSpawnTime;
+
+
+
+        void Update()
         {
-            var enemy = Instantiate(enemyPrefab,transform);
-            nextSpawnTime = Time.time + spawnStep;
-            Destroy(enemy.gameObject,LifeTime);
+
+            if (Time.time > nextSpawnTime)
+            {
+                var enemy = Instantiate(enemyPrefab, transform);
+                nextSpawnTime = Time.time + spawnStep;
+                Destroy(enemy.gameObject, LifeTime);
+            }
+
         }
-        
     }
 }
