@@ -50,8 +50,8 @@ namespace Quest.Enemies
 
             isRunning = Input.GetButton(Running);
 
-            transform.position += direction * ((isRunning ? runSpeed : speed) * Time.deltaTime);
-            transform.Rotate(rotationDir);
+            transform.Translate(direction * ((isRunning ? runSpeed : speed) * Time.deltaTime));
+            transform. Rotate(rotationDir);
 
             rotationDir.y = Input.GetAxis(MouseX) * angularSpeed * Time.deltaTime;
 
@@ -76,6 +76,7 @@ namespace Quest.Enemies
             if (Input.GetKey(KeyCode.Mouse1))
             {
                 Instantiate(_mine, _mineSpawnPlace.position, _mineSpawnPlace.rotation);
+                
             }
 
 

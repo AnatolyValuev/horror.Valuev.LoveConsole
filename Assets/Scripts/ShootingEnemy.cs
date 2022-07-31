@@ -11,6 +11,7 @@ namespace Quest.Enemies
 public class ShootingEnemy : MonoBehaviour
 {
 
+        
         [SerializeField] private GameObject prefabBullet;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private float spawnStep = 1f;
@@ -31,12 +32,16 @@ public class ShootingEnemy : MonoBehaviour
             Shoot();
             LookAtPlayer();
 
+
+
     }
         private void LookAtPlayer()
         {
             var direction = player.transform.position - transform.position;
             var rotation = Vector3.RotateTowards(transform.forward, direction, angularSpeed * Time.deltaTime,0f);
             transform.rotation = Quaternion.LookRotation(rotation);
+
+            
         }
         private void Shoot()
         {

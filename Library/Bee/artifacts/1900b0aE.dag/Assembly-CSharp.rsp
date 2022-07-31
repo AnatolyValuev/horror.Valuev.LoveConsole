@@ -352,9 +352,11 @@
 "Assets/Scripts/Bullet.cs"
 "Assets/Scripts/EnemySpawn.cs"
 "Assets/Scripts/HealthMan.cs"
+"Assets/Scripts/PatrolEnemy.cs"
 "Assets/Scripts/PlayerRun.cs"
 "Assets/Scripts/ShootingEnemy.cs"
 "Assets/Scripts/SoundDoor.cs"
+"Assets/Scripts/WalkinkEnemy.cs"
 -langversion:9.0
 
 /deterministic
